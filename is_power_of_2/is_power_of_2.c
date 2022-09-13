@@ -8,8 +8,3 @@ int	    is_power_of_2(unsigned int n)
         n /= 2;
     return ((n == 1) ? 1 : 0);
 }
-
-int main()
-{
-    printf("%d", is_power_of_2(-1));
-}

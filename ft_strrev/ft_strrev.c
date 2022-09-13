@@ -20,14 +20,3 @@ char *ft_strrev(char *str)
     }  
     return (str);
 }
-
-int main()
-{
-   char str[50] = "geeksforgeeks";
-  
-   printf("The given string is =%s\n",str);
-  
-   printf("After reversing string is =%s",ft_strrev(str));
-  
-   return 0;
-}

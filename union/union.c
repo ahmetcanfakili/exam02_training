@@ -1,42 +1,69 @@
 #include <unistd.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
-void first_part(char **argv)
+int check(int argc, char **argv)
 {
-	bool dup;
-	int i=0, k=0;
-	while(argv[1][i])
-	{
-		dup = false;
-		k = i-1;
-		while(k>=0)
-		{
-			if (argv[1][i] == argv[1][k])
-			{
-				dup = true;
-				break;
-			}
-			k--;
-		}
-		if (dup)
-		{
-			i++;
-			continue;
-		}	
-		write(1,&argv[1][i],1);
-		i++;
-	}
+    int i=0, j=0, k=0;
+    bool contains;
 
+    if (argc == 3)
+    {
+        while(argv[1][i] != '\0')
+        {
+            contains = false;
+            k = i - 1;
+
+            while (k >= 0)
+            {
+                if (argv[1][i] == argv[1][k])
+                {
+                    contains = true;
+                    break;
+                }
+                k--;
+            }
+        
+            if (contains)
+            {
+                i++;
+                continue;
+            }
+        
+            j = 0;
+            while(argv[2][j] != '\0')
+            {
+                if (argv[1][i] == argv[2][j])
+                {
+                    write(1, &argv[2][j], 1);
+                    break;
+                }
+                j++;
+            }
+            i++;
+        }
+    }
+    write(1, "\n", 1);
+	return (0);
 }
-
 
 int main(int argc, char **argv)
-{
+{	
+	int i = 0;
+	int j = 0;
+	
 	if (argc == 3)
 	{
-		first_part(argv);
-		two_part(argv);
-	}
-	write(1,"\n",1);
-}
+		while(argv[1][i] != '\0')
+			i++;
 
+		while(argv[2][j] != '\0')
+		{
+			argv[1][i] = argv[2][j];
+			i++;
+			j++;
+		}
+		check(argc, argv);
+	}
+	write (1, "\n", 1);
+}

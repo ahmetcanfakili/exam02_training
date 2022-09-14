@@ -19,10 +19,3 @@ int		max(int* tab, unsigned int len)
 	}
 	return (0);
 }
-
-int main()
-{
-	int	tab[] = {}; // ??
-	printf("max : %d\n", max(tab, 7));
-	return (0);
-}

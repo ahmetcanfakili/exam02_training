@@ -13,7 +13,7 @@ int main(int argc, char **argv)
             contains = false;
             k = i - 1;
 
-            while (k > 0)
+            while (k >= 0)
             {
                 if (argv[1][i] == argv[1][k])
                 {
@@ -44,3 +44,4 @@ int main(int argc, char **argv)
     }
     write(1, "\n", 1);
 }
+

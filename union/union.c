@@ -1,19 +1,18 @@
 #include <unistd.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-int check(int argc, char **argv)
+void inter(int argc, char **argv)
 {
     int i=0, j=0, k=0;
     bool contains;
-
     if (argc == 3)
     {
         while(argv[1][i] != '\0')
         {
             contains = false;
             k = i - 1;
-
             while (k >= 0)
             {
                 if (argv[1][i] == argv[1][k])
@@ -23,13 +22,11 @@ int check(int argc, char **argv)
                 }
                 k--;
             }
-        
             if (contains)
             {
                 i++;
                 continue;
             }
-        
             j = 0;
             while(argv[2][j] != '\0')
             {
@@ -44,26 +41,26 @@ int check(int argc, char **argv)
         }
     }
     write(1, "\n", 1);
-	return (0);
 }
 
 int main(int argc, char **argv)
-{	
+{
 	int i = 0;
 	int j = 0;
 	
 	if (argc == 3)
 	{
-		while(argv[1][i] != '\0')
+		while(argv[1][i])
 			i++;
 
-		while(argv[2][j] != '\0')
+		while(argv[2][j])
 		{
 			argv[1][i] = argv[2][j];
 			i++;
 			j++;
 		}
-		check(argc, argv);
+		inter(argc, argv);
 	}
 	write (1, "\n", 1);
 }
+

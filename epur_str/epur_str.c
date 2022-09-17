@@ -3,32 +3,22 @@
 
 int main(int argc, char **argv)
 {
-    if (argc == 2)
+    int i = 0;
+    if (argc == 2 && argv[1][i])
     {
-        bool cont = false;
-        int i = 0;
-        while(argv[1][i] == ' ' || (argv[1][i] >= 9 && argv[1][i] <= 13))
+        while(argv[1][i] == ' ' || argv[1][i] == '\t')
             i++;
-
+        
         while(argv[1][i])
         {
-            if (argv[1][i] == ' ' || (argv[1][i] >= 9 && argv[1][i] <= 13))
-                cont = true;
+            if (argv[1][i] >= 33 && argv[1][i] <= 126)
+                write(1,&argv[1][i],1);
 
-            if (!(argv[1][i] == ' ' || (argv[1][i] >= 9 && argv[1][i] <= 13)))
-            {
-                if (cont)
-                {
-                    
-                }
-            }
-
+            if (argv[1][i] == ' ' && (argv[1][i+1] >= 33 && argv[1][i+1] <= 126))
+                write(1," ",1);
             i++;
-
         }
-
-
-
     }
-    write(1, "\n", 1);
+    else
+        write(1, "\n", 1);
 }

@@ -1,66 +1,40 @@
 #include <unistd.h>
-#include <stdbool.h>
-#include <stdlib.h>
-#include <stdio.h>
 
-void inter(int argc, char **argv)
+int check(char *str, int pos, char c)
 {
-    int i=0, j=0, k=0;
-    bool contains;
-    if (argc == 3)
+    int i = 0;
+    while(i < pos)
     {
-        while(argv[1][i] != '\0')
-        {
-            contains = false;
-            k = i - 1;
-            while (k >= 0)
-            {
-                if (argv[1][i] == argv[1][k])
-                {
-                    contains = true;
-                    break;
-                }
-                k--;
-            }
-            if (contains)
-            {
-                i++;
-                continue;
-            }
-            j = 0;
-            while(argv[2][j] != '\0')
-            {
-                if (argv[1][i] == argv[2][j])
-                {
-                    write(1, &argv[2][j], 1);
-                    break;
-                }
-                j++;
-            }
-            i++;
-        }
+        if (str[i] == c)
+            return(1);
+        i++;
     }
-    write(1, "\n", 1);
+    return(0);
+}
+
+void ft_union(char *str1, char *str2)
+{
+    int i=0, j=0;
+
+    while(str1[i])
+    {
+        if (!check(str1, i, str1[i]))
+            write(1, &str1[i], 1);
+        i++;
+    }
+
+    while(str2[j])
+    {
+        if (!check(str2, j, str2[j]) && !check(str1, i, str2[j]))
+            write(1, &str2[j], 1);
+        j++;
+    }
 }
 
 int main(int argc, char **argv)
 {
-	int i = 0;
-	int j = 0;
-	
-	if (argc == 3)
-	{
-		while(argv[1][i])
-			i++;
-
-		while(argv[2][j])
-		{
-			argv[1][i] = argv[2][j];
-			i++;
-			j++;
-		}
-		inter(argc, argv);
-	}
-	write (1, "\n", 1);
+    if (argc == 3)
+        ft_union(argv[1], argv[2]);
+    else
+        write(1, "\n", 1);
 }
-

@@ -1,38 +1,34 @@
-#include <string.h>
-#include <unistd.h>
 #include <stdio.h>
 
-size_t strspn (const char *s1, const char *s2)
+int counter(const char *str, const char c)
 {
-    const char *s = s1;
-    const char *c;
-
-    while (*s1)
-    {
-        for (c = s2; *c; c++)
-        {
-            if (*s1 == *c)
-            break;
-        }
-
-        if (*c == '\0')
-            break;
-        s1++;
-    }
-    return (s1 - s);
+	int i = 0;
+	while(str[i] != '\0')
+	{
+		if (str[i] == c)
+			return(1);
+		i++;
+	}
+	return (0);
 }
 
-int main () 
+size_t	ft_strspn(const char *s, const char *accept)
 {
-   int len;
-   const char str1[] = "ABCDEFG019874";
-   const char str2[] = "ABCD";
+	size_t i = 0;
 
-   len = strspn(str1, str2);
-
-   printf("Length of initial segment matching %d\n", len );
-   
-   return(0);
+	while (s[i] != '\0')
+	{
+		if (counter(accept, s[i]) == 0)
+			break;
+		i++;
+	}
+	return(i);
 }
 
- ???????????????????????????????**
+int main()
+{
+	char *a = "abcpabcabc";
+	char *b = "abc";
+
+	printf("%d", ft_strspn(a, b));
+}

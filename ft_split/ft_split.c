@@ -1,20 +1,33 @@
 #include <stdlib.h>
+#include <stdio.h>
 
-char    **ft_split(char *str)
+???????????????????????????????????????
+
+char		**ft_split(char *str)
 {
-    char **result;
+	int		i;
+	int		j;
+	int		k;
+	char	**split;
 
-    
-
-
-
-
-
-
-
-
-
-
-
-    return(result);
+	i = 0;
+	k = 0;
+	if (!(split = (char **)malloc(sizeof(char *) * 256)))
+		return (NULL);
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+		i += 1;
+	while (str[i])
+	{
+		j = 0;
+		if (!(split[k] = (char *)malloc(sizeof(char) * 4096)))
+			return (NULL);
+		while (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i])
+			split[k][j++] = str[i++];
+		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+			i += 1;
+		split[k][j] = '\0';
+		k += 1;
+	}
+	split[k] = NULL;
+	return (split);
 }

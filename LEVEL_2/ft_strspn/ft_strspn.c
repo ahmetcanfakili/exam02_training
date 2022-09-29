@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 int counter(const char *str, const char c)
 {
 	int i = 0;
@@ -23,12 +21,4 @@ size_t	ft_strspn(const char *s, const char *accept)
 		i++;
 	}
 	return(i);
-}
-
-int main()
-{
-	char *a = "abcpabcabc";
-	char *b = "abc";
-
-	printf("%d", ft_strspn(a, b));
 }

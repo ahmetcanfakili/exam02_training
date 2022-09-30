@@ -13,8 +13,11 @@ int main(int argc, char **argv)
 	if (argc == 3)
 	{
 		while(argv[2][j])
-			if (argv[2][j++] == argv[1][i])
+		{
+			if (argv[2][j] == argv[1][i])
 				i++;
+			j++;
+		}
 
 		if (!(argv[1][i]))
 			ft_putstr(argv[1]);

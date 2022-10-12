@@ -1,13 +1,5 @@
 #include <unistd.h>
 
-int is_space(char arg)
-{
-    if (arg == ' ' || arg == '\t')
-        return(1);
-    else
-        return(0);
-}
-
 int main(int argc, char **argv)
 {
 	int i = 0;
@@ -48,4 +40,3 @@ int main(int argc, char **argv)
 	}	
 	write (1, "\n",1);	
 }
-

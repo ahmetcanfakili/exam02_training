@@ -13,7 +13,7 @@ int main(int argc, char **argv)
             if (argv[1][i] >= 33 && argv[1][i] <= 126)
                 write(1, &argv[1][i], 1);
 
-            else if (argv[1][i] == ' ' && (argv[1][i+1] >= 33 && argv[1][i+1] <= 126))
+            if (argv[1][i] == ' ' && (argv[1][i+1] >= 33 && argv[1][i+1] <= 126))
                 write(1,"   ",3);
             i++;
         }

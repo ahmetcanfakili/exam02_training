@@ -13,5 +13,8 @@ size_t ft_strcspn(const char *s, const char *charset)
 		}
 		i++;
 	}
-	return (0);
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }

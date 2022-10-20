@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 	{
 		while(argv[2][j])
 		{
-			if (argv[2][j] == argv[1][i])
+			if (argv[1][i] == argv[2][j])
 				i++;
 			j++;
 		}

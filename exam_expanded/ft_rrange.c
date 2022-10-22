@@ -3,7 +3,7 @@
 int     *ft_rrange(int start, int end)
 {
 
-    int len, i=0;
+    int len;
     if (start < end)
         len = (end - start) + 1;
     else

@@ -13,8 +13,3 @@ unsigned char	reverse_bits(unsigned char octet)
     }
     return(result);
 }
-
-int main()
-{
-    printf("%zu", reverse_bits('a'));
-}

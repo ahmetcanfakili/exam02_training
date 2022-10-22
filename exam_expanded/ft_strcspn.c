@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 size_t ft_strcspn(const char *s, const char *charset)
 {
 	size_t i = 0;

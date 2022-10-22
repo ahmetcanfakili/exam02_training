@@ -1,3 +1,5 @@
+#include "stdio.h"
+
 int counter(const char *str, const char c)
 {
 	int i = 0;

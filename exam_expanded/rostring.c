@@ -5,7 +5,6 @@ int main(int argc, char **argv)
 	int i = 0;
 	int start;
 	int end;
-	int flag = 0;
 
 	
 	if (argc > 1)

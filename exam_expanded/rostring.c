@@ -5,8 +5,8 @@ int main(int argc, char **argv)
 	int i = 0;
 	int start;
 	int end;
+    int flag = 0;
 
-	
 	if (argc > 1)
 	{
 		while(argv[1][i] == ' ' || argv[1][i] == '\t')
@@ -21,6 +21,7 @@ int main(int argc, char **argv)
         
         while(argv[1][i] != '\0')
         {   
+            flag = 1;
             if (argv[1][i] != ' ' && argv[1][i] != '\t')
                 write(1, &argv[1][i],1);
 
@@ -28,7 +29,7 @@ int main(int argc, char **argv)
                 write(1," ",1);
             i++;
         }
-        if (argv[1][i] == '\0')
+        if (argv[1][i] == '\0' && flag)
             write(1," ",1);
 
         while(start < end)

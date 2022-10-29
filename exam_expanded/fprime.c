@@ -25,6 +25,5 @@ int main(int argc, char **argv)
             i++;
         }
     }
-    else   
-        printf("\n");
+    printf("\n");
 }

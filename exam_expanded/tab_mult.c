@@ -49,6 +49,5 @@ int main(int argc, char **argv)
             i++;
         }
     }
-    else   
-        write(1, "\n", 1);
+    write(1, "\n", 1);
 }

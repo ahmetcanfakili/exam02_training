@@ -10,6 +10,8 @@ int     *ft_rrange(int start, int end)
         len = (start - end) + 1;
 
     int *array = (int *)malloc(sizeof(int) * len);
+    if (array == NULL)
+        return(NULL);
 
     len--;
     while(len >= 0)

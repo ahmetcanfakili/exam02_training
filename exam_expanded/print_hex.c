@@ -38,6 +38,5 @@ int main(int argc, char **argv)
         if (num >= 0)
             print_hex(num);
     }
-    else   
-        write(1, "\n", 1);
+    write(1, "\n", 1);
 }

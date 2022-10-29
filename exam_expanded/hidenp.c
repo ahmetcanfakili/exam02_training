@@ -17,6 +17,5 @@ int main(int argc, char **argv)
         else
             write(1,"0",1);
     }
-    else
-        write(1, "\n", 1);
+    write(1, "\n", 1);
 }

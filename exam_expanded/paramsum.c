@@ -11,12 +11,7 @@ void print_num(int arg)
 int main(int argc, char **argv)
 {
     (void)argv;
-    if (argc > 1)
-    {
-        int arg;
-        arg = argc - 1;
-        print_num(arg);
-    }
-    else
-        write(1, "0\n", 1);
+    print_num(argc - 1);
+    write(1, "\n", 1);
+    return(0);
 }

@@ -21,6 +21,9 @@ int base(char c, int str_base)
 
 int	ft_atoi_base(const char *str, int str_base)
 {
+    if (str_base < 2 || str_base > 16)
+        return(0);
+
     int sign = 1;
     int result = 0;
     int digit;

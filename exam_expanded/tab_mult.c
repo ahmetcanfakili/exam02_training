@@ -31,22 +31,26 @@ void print_num(int arg)
 
 int main(int argc, char **argv)
 {
-    int num = ft_atoi(argv[1]);
-    int res = 0;
 
-    if (argc == 2 && num > 0)
+    if (argc == 2)
     {
+        int num = ft_atoi(argv[1]);
+        int res = 0;
         int i = 1;
-        while(i < 10)
+        
+        if (num > 0)
         {
-            res = i * num;
-            print_num(i);
-            write(1," x ",3);
-            print_num(num);
-            write(1," = ",3);
-            print_num(res);
-            write(1, "\n", 1);
-            i++;
+            while(i < 10)
+            {
+                res = i * num;
+                print_num(i);
+                write(1," x ",3);
+                print_num(num);
+                write(1," = ",3);
+                print_num(res);
+                write(1, "\n", 1);
+                i++;
+            }
         }
     }
     write(1, "\n", 1);

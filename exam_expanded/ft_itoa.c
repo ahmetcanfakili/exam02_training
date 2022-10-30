@@ -25,6 +25,9 @@ int len(int arg)
 
 char	*ft_itoa(int nbr)
 {
+    if (nbr == -2147483648)
+	    return ("-2147483648");
+    
     char *str;
     int length = len(nbr);
     int num_tmp = nbr;

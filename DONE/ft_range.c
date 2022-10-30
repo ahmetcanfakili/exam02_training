@@ -26,5 +26,5 @@ int *ft_range(int start, int end)
             start++;
         i++;
     }
-    return(&array[0]);
+    return(array);
 }
